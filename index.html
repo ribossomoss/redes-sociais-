@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
 </head>
 <body>
-    <h1 id="surveyTitle"></h1>
+    <h1 id="surveyTitle">Pesquisa sobre redes sociais</h1>
     <form id="surveyForm" aria-labelledby="surveyTitle" novalidate>
-        <label for="name"></label><br>
+        <label for="name">Nome:</label><br>
         <input type="text" id="name" required aria-required="true" tabindex="1"><br><br>
 
-        <label></label><br>
+        <label>Gênero</label><br>
         <select id="gender" required aria-required="true" tabindex="2">
             <option value="">Selecione...</option>
             <option value="Masculino">Masculino</option>
@@ -21,13 +21,13 @@
             <option value="Prefiro não dizer">Prefiro não dizer</option>
         </select><br><br>
 
-        <label for="age"></label><br>
+        <label for="age">Idade:</label><br>
         <input type="number" id="age" min="1" required aria-required="true" tabindex="3"><br><br>
 
-        <label for="otherPlatforms"></label><br>
+        <label for="otherPlatforms">Quais plataformas você utiliza além da mais usada?</label><br>
         <textarea id="otherPlatforms" rows="2" placeholder="Ex: Twitter, LinkedIn..." required aria-required="true" tabindex="4"></textarea><br><br>
 
-        <label for="contentPreference"></label><br>
+        <label for="contentPreference">Qual tipo de conteúdo você gosta de ver?</label><br>
         <select id="contentPreference" required aria-required="true" tabindex="5">
             <option value="">Selecione...</option>
             <option value="Memes">Memes</option>
@@ -37,14 +37,14 @@
             <option value="Outros">Outros</option>
         </select><br><br>
 
-        <label for="clickAds"></label><br>
+        <label for="clickAds">Você costuma clicar em anúncios das redes sociais?</label><br>
         <select id="clickAds" required aria-required="true" tabindex="6">
             <option value="">Selecione...</option>
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
         </select><br><br>
 
-        <label for="impact"></label><br>
+        <label for="impact">Como as redes sociais impactamna sua vida?</label><br>
         <select id="impact" required aria-required="true" tabindex="7">
             <option value="">Selecione...</option>
             <option value="Positivo">Positivo</option>
@@ -52,14 +52,14 @@
             <option value="Neutro">Neutro</option>
         </select><br><br>
 
-        <label for="contentType"></label><br>
+        <label for="contentType">Você prefere conteúdo gerado por úsuarios ou por marcas?</label><br>
         <select id="contentType" required aria-required="true" tabindex="8">
             <option value="">Selecione...</option>
             <option value="Usuários">Usuários</option>
             <option value="Marcas">Marcas</option>
         </select><br><br>
 
-        <label for="feedback"></label><br>
+        <label for="feedback">Quais são suas principais preocupações sobre o uso das redes sociais?</label><br>
         <textarea id="feedback" rows="4" required aria-required="true" tabindex="9"></textarea><br><br>
 
         <button type="submit" tabindex="10">Enviar</button>
