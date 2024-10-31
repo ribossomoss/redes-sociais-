@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+</head>
+<body>
+    <h1></h1>
+    <form id="surveyForm">
+        <label for="name"></label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label></label><br>
+        <select id="socialMedia" required>
+            <option value=""></option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Twitter">Twitter</option>
+            <option value="TikTok">TikTok</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Outra">Outra</option>
+        </select><br><br>
+
+        <label></label><br>
+        <input type="number" id="hours" min="0" required><br><br>
+
+        <label></label><br>
+        <textarea id="feedback" rows="4" required></textarea><br><br>
+
+        <button type="submit"></button>
+    </form>
+
+    <div id="result" class="feedback" style="display:none;"></div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Obtendo os valores do formulário
+            const name = document.getElementById('name').value;
+            const socialMedia = document.getElementById('socialMedia').value;
+            const hours = document.getElementById('hours').value;
+            const feedbackText = document.getElementById('feedback').value;
+
+            // Exibindo os resultados
+            const result = `
+                <h2>Obrigado pela sua participação, ${name}!</h2>
+                <p><strong>Rede Social Mais Usada:</strong> ${socialMedia}</p>
+                <p><strong>Horas por Dia:</strong> ${hours} horas</p>
+                <p><strong>O que você mais gosta:</strong> ${feedbackText}</p>
+                
+                <h3>Reflexões</h3>
+                <p>As redes sociais são uma parte importante de nossas vidas. Agradecemos por compartilhar suas opiniões!</p>
+                <p>Considere como você pode usar esse tempo de forma mais eficaz e positiva.</p>
+            `;
+
+            document.getElementById('result').innerHTML = result;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('surveyForm').reset(); // Reseta o formulário
+        });
+    </script>
+</body>
+</html>
+
