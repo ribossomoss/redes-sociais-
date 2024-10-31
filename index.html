@@ -3,33 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Redes Sociais</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
 </head>
 <body>
-    <h1></h1>
-    <form id="surveyForm">
+    <h1 id="surveyTitle"></h1>
+    <form id="surveyForm" aria-labelledby="surveyTitle" novalidate>
         <label for="name"></label><br>
-        <input type="text" id="name" required><br><br>
+        <input type="text" id="name" required aria-required="true" tabindex="1"><br><br>
 
         <label></label><br>
-        <select id="socialMedia" required>
-            <option value=""></option>
-            <option value="Facebook">Facebook</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Twitter">Twitter</option>
-            <option value="TikTok">TikTok</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Outra">Outra</option>
+        <select id="gender" required aria-required="true" tabindex="2">
+            <option value="">Selecione...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Não Binário">Não Binário</option>
+            <option value="Prefiro não dizer">Prefiro não dizer</option>
         </select><br><br>
 
-        <label></label><br>
-        <input type="number" id="hours" min="0" required><br><br>
+        <label for="age"></label><br>
+        <input type="number" id="age" min="1" required aria-required="true" tabindex="3"><br><br>
 
-        <label></label><br>
-        <textarea id="feedback" rows="4" required></textarea><br><br>
+        <label for="otherPlatforms"></label><br>
+        <textarea id="otherPlatforms" rows="2" placeholder="Ex: Twitter, LinkedIn..." required aria-required="true" tabindex="4"></textarea><br><br>
 
-        <button type="submit"></button>
+        <label for="contentPreference"></label><br>
+        <select id="contentPreference" required aria-required="true" tabindex="5">
+            <option value="">Selecione...</option>
+            <option value="Memes">Memes</option>
+            <option value="Notícias">Notícias</option>
+            <option value="Vídeos">Vídeos</option>
+            <option value="Posts Inspiradores">Posts Inspiradores</option>
+            <option value="Outros">Outros</option>
+        </select><br><br>
+
+        <label for="clickAds"></label><br>
+        <select id="clickAds" required aria-required="true" tabindex="6">
+            <option value="">Selecione...</option>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+        </select><br><br>
+
+        <label for="impact"></label><br>
+        <select id="impact" required aria-required="true" tabindex="7">
+            <option value="">Selecione...</option>
+            <option value="Positivo">Positivo</option>
+            <option value="Negativo">Negativo</option>
+            <option value="Neutro">Neutro</option>
+        </select><br><br>
+
+        <label for="contentType"></label><br>
+        <select id="contentType" required aria-required="true" tabindex="8">
+            <option value="">Selecione...</option>
+            <option value="Usuários">Usuários</option>
+            <option value="Marcas">Marcas</option>
+        </select><br><br>
+
+        <label for="feedback"></label><br>
+        <textarea id="feedback" rows="4" required aria-required="true" tabindex="9"></textarea><br><br>
+
+        <button type="submit" tabindex="10">Enviar</button>
     </form>
 
     <div id="result" class="feedback" style="display:none;"></div>
@@ -40,16 +73,26 @@
 
             // Obtendo os valores do formulário
             const name = document.getElementById('name').value;
-            const socialMedia = document.getElementById('socialMedia').value;
-            const hours = document.getElementById('hours').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const otherPlatforms = document.getElementById('otherPlatforms').value;
+            const contentPreference = document.getElementById('contentPreference').value;
+            const clickAds = document.getElementById('clickAds').value;
+            const impact = document.getElementById('impact').value;
+            const contentType = document.getElementById('contentType').value;
             const feedbackText = document.getElementById('feedback').value;
 
             // Exibindo os resultados
             const result = `
                 <h2>Obrigado pela sua participação, ${name}!</h2>
-                <p><strong>Rede Social Mais Usada:</strong> ${socialMedia}</p>
-                <p><strong>Horas por Dia:</strong> ${hours} horas</p>
-                <p><strong>O que você mais gosta:</strong> ${feedbackText}</p>
+                <p><strong>Gênero:</strong> ${gender}</p>
+                <p><strong>Idade:</strong> ${age} anos</p>
+                <p><strong>Outras Plataformas Utilizadas:</strong> ${otherPlatforms}</p>
+                <p><strong>Conteúdo Preferido:</strong> ${contentPreference}</p>
+                <p><strong>Clica em Anúncios:</strong> ${clickAds}</p>
+                <p><strong>Impacto das Redes Sociais:</strong> ${impact}</p>
+                <p><strong>Tipo de Conteúdo Preferido:</strong> ${contentType}</p>
+                <p><strong>Preocupações:</strong> ${feedbackText}</p>
                 
                 <h3>Reflexões</h3>
                 <p>As redes sociais são uma parte importante de nossas vidas. Agradecemos por compartilhar suas opiniões!</p>
@@ -63,4 +106,5 @@
     </script>
 </body>
 </html>
+
 
